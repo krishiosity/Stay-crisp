@@ -1,0 +1,16 @@
+{
+  "name": "crisp",
+  "version": "1.0.0",
+  "description": "HTML-first landing page for a nootropic pouch brand, following Shopify/Dawn repository conventions.",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "format": "prettier --write \"**/*.{html,css,js,json,md}\"",
+    "lint": "prettier --check \"**/*.{html,css,js,json,md}\"",
+    "serve": "python3 -m http.server 8080"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "html-validate": "^8.24.1"
+  }
+}
