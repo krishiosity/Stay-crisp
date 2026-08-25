@@ -1,0 +1,141 @@
+<section class="crisp-section" style="padding-top:0">
+  <div class="crisp-wrap">
+    <div class="crisp-science">
+      <div class="crisp-science-top">
+        <div>
+          <div class="crisp-eyebrow">{{ section.settings.eyebrow }}</div>
+          <h2>{{ section.settings.heading }}</h2>
+          <p style="color:var(--crisp-on-dark-soft);margin-top:14px;max-width:260px;font-size:14px">{{ section.settings.description }}</p>
+          {%- if section.settings.link_label != blank -%}
+            <a class="link" href="{{ section.settings.link_url }}">{{ section.settings.link_label }}</a>
+          {%- endif -%}
+        </div>
+        <div class="crisp-ingr">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'ingredient' -%}
+              <div class="col" {{ block.shopify_attributes }}>
+                <div class="ic">{{ block.settings.icon }}</div>
+                <div class="amt">{{ block.settings.amount }}<small>{{ block.settings.unit }}</small></div>
+                <div class="nm">{{ block.settings.name }}</div>
+                <div class="ds">{{ block.settings.description }}</div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+      {%- if section.settings.vitamins != blank -%}
+        <div class="crisp-vit">
+          {%- assign vitamins = section.settings.vitamins | split: '|' -%}
+          {%- for v in vitamins -%}
+            {%- assign parts = v | split: ':' -%}
+            <span>{{ parts[0] | strip }} <b>{{ parts[1] | strip }}</b></span>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CRISP Science",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The Crisp Edge"
+    },
+    {
+      "type": "html",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Powered<br>by purpose."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Clinically studied ingredients in optimal doses to deliver clean, sustained energy and laser-sharp focus."
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link label",
+      "default": "View the science →"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "text",
+      "id": "vitamins",
+      "label": "Vitamins (Name:Value, pipe-separated)",
+      "default": "Vitamin D6:17mg (100% DV)|Vitamin B12:2.4mcg (100% DV)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingredient",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon emoji",
+          "default": "⚡"
+        },
+        {
+          "type": "text",
+          "id": "amount",
+          "label": "Amount",
+          "default": "50"
+        },
+        {
+          "type": "text",
+          "id": "unit",
+          "label": "Unit",
+          "default": "mg"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Natural Caffeine"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description",
+          "default": "Clean energy & alertness."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "CRISP Science",
+      "blocks": [
+        {
+          "type": "ingredient",
+          "settings": { "icon": "⚡", "amount": "50", "unit": "mg", "name": "Natural Caffeine", "description": "Clean energy & alertness." }
+        },
+        {
+          "type": "ingredient",
+          "settings": { "icon": "◍", "amount": "60", "unit": "mg", "name": "L-Theanine", "description": "Focus & stress balance." }
+        },
+        {
+          "type": "ingredient",
+          "settings": { "icon": "◈", "amount": "40", "unit": "mg", "name": "Alpha-GPC", "description": "Cognitive performance." }
+        },
+        {
+          "type": "ingredient",
+          "settings": { "icon": "✿", "amount": "5", "unit": "mg", "name": "Panax Ginseng", "description": "Endurance & mental stamina." }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

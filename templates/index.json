@@ -1,0 +1,209 @@
+{
+  "sections": {
+    "crisp_hero": {
+      "type": "crisp-hero",
+      "settings": {
+        "heading": "Flow.<br>Focus.<br>Energy.",
+        "subheading": "A better way to perform.",
+        "button_label_1": "Shop Now →",
+        "button_label_2": "Learn More →"
+      }
+    },
+    "crisp_ticker": {
+      "type": "crisp-ticker",
+      "settings": {}
+    },
+    "crisp_evolved": {
+      "type": "crisp-evolved",
+      "settings": {
+        "eyebrow": "Science-backed purpose-built",
+        "heading": "Performance<br>has evolved.",
+        "text": "CRISP pouches feature a science-backed blend of 4 natural nootropics that work synergistically to supercharge focus, energy, and everyday performance.",
+        "button_label": "Learn More →"
+      }
+    },
+    "crisp_flavors": {
+      "type": "crisp-flavors",
+      "blocks": {
+        "flavor_clear": {
+          "type": "flavor",
+          "settings": {
+            "title": "Crisp Clear",
+            "flavor_color": "clear",
+            "stars": "★★★★★",
+            "rating": "4.7/5",
+            "meta": "5-Pack / 100 Pouches",
+            "price": "$29.95",
+            "strengths": "4MG, 6MG, 8MG"
+          }
+        },
+        "flavor_mango": {
+          "type": "flavor",
+          "settings": {
+            "title": "Crisp Mango",
+            "flavor_color": "mango",
+            "stars": "★★★★☆",
+            "rating": "4.4/5",
+            "meta": "5-Pack / 100 Pouches",
+            "price": "$29.95",
+            "strengths": "4MG, 6MG, 8MG"
+          }
+        },
+        "flavor_mint": {
+          "type": "flavor",
+          "settings": {
+            "title": "Crisp Mint",
+            "flavor_color": "mint",
+            "stars": "★★★★★",
+            "rating": "4.6/5",
+            "meta": "5-Pack / 100 Pouches",
+            "price": "$29.95",
+            "strengths": "4MG, 6MG, 8MG"
+          }
+        },
+        "flavor_winter": {
+          "type": "flavor",
+          "settings": {
+            "title": "Crisp Wintergreen",
+            "flavor_color": "winter",
+            "stars": "★★★★☆",
+            "rating": "4.3/5",
+            "meta": "5-Pack / 100 Pouches",
+            "price": "$29.95",
+            "strengths": "4MG, 6MG, 8MG"
+          }
+        }
+      },
+      "block_order": ["flavor_clear", "flavor_mango", "flavor_mint", "flavor_winter"],
+      "settings": {
+        "eyebrow": "Flavors",
+        "heading": "Same edge.<br>Four flavors.",
+        "description": "Four elevated flavors. One clean formula. All CRISP. All performance.",
+        "button_label": "Shop All Flavors →"
+      }
+    },
+    "crisp_editorial": {
+      "type": "crisp-editorial",
+      "blocks": {
+        "editorial_flow": {
+          "type": "card",
+          "settings": {
+            "style": "flow",
+            "kick": "Built for focus",
+            "heading": "Built to<br>flow.",
+            "text": "For the ones who push every day. In every way.",
+            "button_label": "Our Story →"
+          }
+        },
+        "editorial_go": {
+          "type": "card",
+          "settings": {
+            "style": "go",
+            "kick": "Built for life",
+            "heading": "Built to<br>go.",
+            "text": "From early runs to late nights. From training to comp prep. CRISP moves with you.",
+            "button_label": "Learn More →"
+          }
+        }
+      },
+      "block_order": ["editorial_flow", "editorial_go"],
+      "settings": {}
+    },
+    "crisp_ritual": {
+      "type": "crisp-ritual",
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": { "number": "01", "title": "Rip", "text": "Rip open the lid. Fuel your mission." }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": { "number": "02", "title": "Slip", "text": "Slip CRISP between cheek and gum." }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": { "number": "03", "title": "Perform", "text": "Sit back & lock in. Get after it." }
+        }
+      },
+      "block_order": ["step_1", "step_2", "step_3"],
+      "settings": {
+        "heading": "Rip.<br>Slip.<br>Perform.",
+        "subtext": "The ritual is simple. Three moves between you and your best hours."
+      }
+    },
+    "crisp_science": {
+      "type": "crisp-science",
+      "blocks": {
+        "ingr_1": {
+          "type": "ingredient",
+          "settings": { "icon": "⚡", "amount": "50", "unit": "mg", "name": "Natural Caffeine", "description": "Clean energy & alertness." }
+        },
+        "ingr_2": {
+          "type": "ingredient",
+          "settings": { "icon": "◍", "amount": "60", "unit": "mg", "name": "L-Theanine", "description": "Focus & stress balance." }
+        },
+        "ingr_3": {
+          "type": "ingredient",
+          "settings": { "icon": "◈", "amount": "40", "unit": "mg", "name": "Alpha-GPC", "description": "Cognitive performance." }
+        },
+        "ingr_4": {
+          "type": "ingredient",
+          "settings": { "icon": "✿", "amount": "5", "unit": "mg", "name": "Panax Ginseng", "description": "Endurance & mental stamina." }
+        }
+      },
+      "block_order": ["ingr_1", "ingr_2", "ingr_3", "ingr_4"],
+      "settings": {
+        "eyebrow": "The Crisp Edge",
+        "heading": "Powered<br>by purpose.",
+        "description": "Clinically studied ingredients in optimal doses to deliver clean, sustained energy and laser-sharp focus.",
+        "link_label": "View the science →",
+        "vitamins": "Vitamin D6:17mg (100% DV)|Vitamin B12:2.4mcg (100% DV)"
+      }
+    },
+    "crisp_testimonials": {
+      "type": "crisp-testimonials",
+      "blocks": {
+        "testi_1": {
+          "type": "testimonial",
+          "settings": { "name": "Clay", "quote": "CRISP keeps me locked in from start to finish." }
+        },
+        "testi_2": {
+          "type": "testimonial",
+          "settings": { "name": "Deuce", "quote": "No jitters. No crash. Just clean, steady energy." }
+        },
+        "testi_3": {
+          "type": "testimonial",
+          "settings": { "name": "Mason", "quote": "Part of my routine. Every single day." }
+        },
+        "testi_4": {
+          "type": "testimonial",
+          "settings": { "name": "Chris", "quote": "Sharper focus. Better workouts. Period." }
+        }
+      },
+      "block_order": ["testi_1", "testi_2", "testi_3", "testi_4"],
+      "settings": {
+        "eyebrow": "Real people. Real results.",
+        "heading": "What high performers say."
+      }
+    },
+    "crisp_newsletter": {
+      "type": "crisp-newsletter",
+      "settings": {
+        "heading": "Stay <em>Crisp.</em>",
+        "placeholder": "Enter your email",
+        "button_label": "Join the List →"
+      }
+    }
+  },
+  "order": [
+    "crisp_hero",
+    "crisp_ticker",
+    "crisp_evolved",
+    "crisp_flavors",
+    "crisp_editorial",
+    "crisp_ritual",
+    "crisp_science",
+    "crisp_testimonials",
+    "crisp_newsletter"
+  ]
+}

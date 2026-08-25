@@ -1,0 +1,43 @@
+<section class="crisp-section" style="padding-top:0">
+  <div class="crisp-wrap">
+    <div class="crisp-stay">
+      <h2>{{ section.settings.heading }}</h2>
+      {%- form 'customer', id: 'CrispNewsletter', class: 'crisp-newsletter-form' -%}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <input type="email" name="contact[email]" placeholder="{{ section.settings.placeholder }}" aria-label="Email" required>
+        <button class="crisp-btn pink" type="submit">{{ section.settings.button_label }}</button>
+      {%- endform -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CRISP Newsletter",
+  "settings": [
+    {
+      "type": "html",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Stay <em>Crisp.</em>"
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Placeholder text",
+      "default": "Enter your email"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Join the List →"
+    }
+  ],
+  "presets": [
+    {
+      "name": "CRISP Newsletter"
+    }
+  ]
+}
+{% endschema %}

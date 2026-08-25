@@ -1,0 +1,83 @@
+<section class="crisp-section" style="padding-top:0">
+  <div class="crisp-wrap">
+    <div class="crisp-ritual-head">
+      <h2>{{ section.settings.heading }}</h2>
+      <div class="lead">{{ section.settings.subtext }}</div>
+    </div>
+    <div class="crisp-steps">
+      {%- for block in section.blocks -%}
+        <div class="crisp-step" {{ block.shopify_attributes }}>
+          <span class="no">{{ block.settings.number }}</span>
+          <div class="bg"></div>
+          <h4>{{ block.settings.title }}</h4>
+          <p>{{ block.settings.text }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CRISP Ritual",
+  "settings": [
+    {
+      "type": "html",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Rip.<br>Slip.<br>Perform."
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "The ritual is simple. Three moves between you and your best hours."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number",
+          "default": "01"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Rip"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Description",
+          "default": "Rip open the lid. Fuel your mission."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "CRISP Ritual",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": { "number": "01", "title": "Rip", "text": "Rip open the lid. Fuel your mission." }
+        },
+        {
+          "type": "step",
+          "settings": { "number": "02", "title": "Slip", "text": "Slip CRISP between cheek and gum." }
+        },
+        {
+          "type": "step",
+          "settings": { "number": "03", "title": "Perform", "text": "Sit back & lock in. Get after it." }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

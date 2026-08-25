@@ -1,0 +1,70 @@
+<section class="crisp-section" style="padding-top:0">
+  <div class="crisp-wrap">
+    <div class="crisp-testi-head">
+      <div class="crisp-eyebrow">{{ section.settings.eyebrow }}</div>
+      <h2>{{ section.settings.heading }}</h2>
+    </div>
+    <div class="crisp-tgrid">
+      {%- for block in section.blocks -%}
+        <div class="crisp-tcard" {{ block.shopify_attributes }}>
+          <span class="play">▶</span>
+          <div class="who">
+            <div class="nm">{{ block.settings.name }}</div>
+            <div class="rl">{{ block.settings.quote }}</div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CRISP Testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Real people. Real results."
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What high performers say."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Clay"
+        },
+        {
+          "type": "text",
+          "id": "quote",
+          "label": "Quote",
+          "default": "CRISP keeps me locked in from start to finish."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "CRISP Testimonials",
+      "blocks": [
+        { "type": "testimonial", "settings": { "name": "Clay", "quote": "CRISP keeps me locked in from start to finish." } },
+        { "type": "testimonial", "settings": { "name": "Deuce", "quote": "No jitters. No crash. Just clean, steady energy." } },
+        { "type": "testimonial", "settings": { "name": "Mason", "quote": "Part of my routine. Every single day." } },
+        { "type": "testimonial", "settings": { "name": "Chris", "quote": "Sharper focus. Better workouts. Period." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

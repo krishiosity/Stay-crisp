@@ -1,0 +1,98 @@
+<section class="crisp-section" style="padding-top:0">
+  <div class="crisp-wrap">
+    {%- for block in section.blocks -%}
+      <div class="crisp-editorial {{ block.settings.style }}" {{ block.shopify_attributes }}>
+        <div class="bg"></div>
+        <div class="txt">
+          <div class="kick">{{ block.settings.kick }}</div>
+          <h2>{{ block.settings.heading }}</h2>
+          <p>{{ block.settings.text }}</p>
+          {%- if block.settings.button_label != blank -%}
+            <a class="crisp-btn on-dark" href="{{ block.settings.button_link }}">{{ block.settings.button_label }}</a>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CRISP Editorial",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Editorial Card",
+      "settings": [
+        {
+          "type": "select",
+          "id": "style",
+          "label": "Style",
+          "options": [
+            { "value": "flow", "label": "Flow (dark)" },
+            { "value": "go", "label": "Go (warm)" }
+          ],
+          "default": "flow"
+        },
+        {
+          "type": "text",
+          "id": "kick",
+          "label": "Kicker",
+          "default": "Built for focus"
+        },
+        {
+          "type": "html",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Built to<br>flow."
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "For the ones who push every day. In every way."
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Our Story →"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "CRISP Editorial",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "style": "flow",
+            "kick": "Built for focus",
+            "heading": "Built to<br>flow.",
+            "text": "For the ones who push every day. In every way.",
+            "button_label": "Our Story →"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "style": "go",
+            "kick": "Built for life",
+            "heading": "Built to<br>go.",
+            "text": "From early runs to late nights. From training to comp prep. CRISP moves with you.",
+            "button_label": "Learn More →"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,181 @@
+<section class="crisp-section" style="padding-top:0">
+  <div class="crisp-wrap">
+    <div class="crisp-flavors-head">
+      <div>
+        <div class="crisp-eyebrow">{{ section.settings.eyebrow }}</div>
+        <h2 class="crisp-sec-h">{{ section.settings.heading }}</h2>
+      </div>
+      <div class="right">
+        <p>{{ section.settings.description }}</p>
+        {%- if section.settings.button_label != blank -%}
+          <a class="crisp-btn line" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+    <div class="crisp-fgrid">
+      {%- for block in section.blocks -%}
+        <div class="crisp-fcard" {{ block.shopify_attributes }}>
+          <div class="puck crisp-puck-{{ block.settings.flavor_color }}"></div>
+          <div class="crisp-stars">{{ block.settings.stars }} <span>{{ block.settings.rating }}</span></div>
+          <h3>{{ block.settings.title }}</h3>
+          <div class="meta">{{ block.settings.meta }}</div>
+          <div class="price">{{ block.settings.price }}</div>
+          <div class="crisp-mgs">
+            {%- assign strengths = block.settings.strengths | split: ',' -%}
+            {%- for s in strengths -%}
+              <div class="crisp-mg">{{ s | strip }}</div>
+            {%- endfor -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CRISP Flavors",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Flavors"
+    },
+    {
+      "type": "html",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Same edge.<br>Four flavors."
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description",
+      "default": "Four elevated flavors. One clean formula. All CRISP. All performance."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Shop All Flavors →"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "flavor",
+      "name": "Flavor Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Crisp Clear"
+        },
+        {
+          "type": "select",
+          "id": "flavor_color",
+          "label": "Flavor color",
+          "options": [
+            { "value": "clear", "label": "Clear" },
+            { "value": "mango", "label": "Mango" },
+            { "value": "mint", "label": "Mint" },
+            { "value": "winter", "label": "Wintergreen" }
+          ],
+          "default": "clear"
+        },
+        {
+          "type": "text",
+          "id": "stars",
+          "label": "Stars display",
+          "default": "★★★★★"
+        },
+        {
+          "type": "text",
+          "id": "rating",
+          "label": "Rating text",
+          "default": "4.7/5"
+        },
+        {
+          "type": "text",
+          "id": "meta",
+          "label": "Meta text",
+          "default": "5-Pack / 100 Pouches"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price",
+          "default": "$29.95"
+        },
+        {
+          "type": "text",
+          "id": "strengths",
+          "label": "Strengths (comma-separated)",
+          "default": "4MG, 6MG, 8MG"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "CRISP Flavors",
+      "blocks": [
+        {
+          "type": "flavor",
+          "settings": {
+            "title": "Crisp Clear",
+            "flavor_color": "clear",
+            "stars": "★★★★★",
+            "rating": "4.7/5",
+            "meta": "5-Pack / 100 Pouches",
+            "price": "$29.95",
+            "strengths": "4MG, 6MG, 8MG"
+          }
+        },
+        {
+          "type": "flavor",
+          "settings": {
+            "title": "Crisp Mango",
+            "flavor_color": "mango",
+            "stars": "★★★★☆",
+            "rating": "4.4/5",
+            "meta": "5-Pack / 100 Pouches",
+            "price": "$29.95",
+            "strengths": "4MG, 6MG, 8MG"
+          }
+        },
+        {
+          "type": "flavor",
+          "settings": {
+            "title": "Crisp Mint",
+            "flavor_color": "mint",
+            "stars": "★★★★★",
+            "rating": "4.6/5",
+            "meta": "5-Pack / 100 Pouches",
+            "price": "$29.95",
+            "strengths": "4MG, 6MG, 8MG"
+          }
+        },
+        {
+          "type": "flavor",
+          "settings": {
+            "title": "Crisp Wintergreen",
+            "flavor_color": "winter",
+            "stars": "★★★★☆",
+            "rating": "4.3/5",
+            "meta": "5-Pack / 100 Pouches",
+            "price": "$29.95",
+            "strengths": "4MG, 6MG, 8MG"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

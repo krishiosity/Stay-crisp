@@ -1,0 +1,57 @@
+<section class="crisp-section">
+  <div class="crisp-wrap">
+    <div class="crisp-evolved">
+      <div>
+        <div class="crisp-eyebrow">{{ section.settings.eyebrow }}</div>
+        <h2>{{ section.settings.heading }}</h2>
+        <p>{{ section.settings.text }}</p>
+        {%- if section.settings.button_label != blank -%}
+          <a class="crisp-btn on-dark" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
+        {%- endif -%}
+      </div>
+      <div class="can-open"><span>CRISP</span></div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CRISP Evolved",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Science-backed purpose-built"
+    },
+    {
+      "type": "html",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Performance<br>has evolved."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "CRISP pouches feature a science-backed blend of 4 natural nootropics that work synergistically to supercharge focus, energy, and everyday performance."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Learn More →"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "CRISP Evolved"
+    }
+  ]
+}
+{% endschema %}
